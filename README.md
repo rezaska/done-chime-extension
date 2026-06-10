@@ -38,4 +38,4 @@ Click the extension icon to open the settings popup and customize sound, volume,
 
 ## Privacy
 
-This extension does **not** collect, store, or transmit any user data. All settings live in your browser's local storage, and all sounds are synthesized locally. See the [privacy policy](https://www.rezasoleimani.ca/morning/privacy/) for details.
+This extension does **not** collect, store, or transmit any user data. All settings live in your browser's local storage, and all sounds are synthesized locally. See the [privacy policy](https://www.rezasoleimani.ca/done-chime/privacy/) for details.

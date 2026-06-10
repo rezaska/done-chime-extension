@@ -36,29 +36,6 @@ The easiest way is to install directly from the [Chrome Web Store](https://chrom
 
 Click the extension icon to open the settings popup and customize sound, volume, and notifications.
 
-## Project structure
-
-| File                  | Purpose                                                              |
-| --------------------- | -------------------------------------------------------------------- |
-| `manifest.json`       | Manifest V3 configuration (permissions, scripts, action)             |
-| `content.js`          | Detects when Claude finishes responding and plays the chime          |
-| `background.js`       | Service worker that shows and handles desktop notifications          |
-| `popup.html` / `popup.js` | Settings UI for sound, volume, and notification toggles          |
-| `privacy-policy.html` | Privacy policy                                                       |
-| `icons/`              | Extension icons (16 / 48 / 128 px)                                   |
-
-## Permissions
-
-| Permission             | Why it's needed                                          |
-| ---------------------- | -------------------------------------------------------- |
-| `notifications`        | Show the "Claude is done" desktop notification           |
-| `storage`              | Persist your sound, volume, and toggle preferences       |
-| `https://claude.ai/*`  | Run the content script on Claude to detect completion    |
-
 ## Privacy
 
 This extension does **not** collect, store, or transmit any user data. All settings live in your browser's local storage, and all sounds are synthesized locally. See the [privacy policy](https://www.rezasoleimani.ca/morning/privacy/) for details.
-
-## License
-
-MIT

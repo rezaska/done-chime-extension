@@ -13,6 +13,13 @@
   let settings = { enabled: true, volume: 70, sound: 'chime', notifications: true };
   let debounceTimer = null;
 
+  // Opt-in debug logging: run `localStorage.doneChimeDebug = '1'` in the
+  // claude.ai console, reload, and watch for "[Done Chime]" messages.
+  const DEBUG = (() => {
+    try { return localStorage.getItem('doneChimeDebug') === '1'; } catch (e) { return false; }
+  })();
+  function log(...args) { if (DEBUG) console.log('[Done Chime]', ...args); }
+
   // Load persisted settings
   chrome.storage.local.get(['enabled', 'volume', 'sound', 'notifications'], (data) => {
     if (data.enabled !== undefined)       settings.enabled       = data.enabled;
@@ -80,18 +87,22 @@
   }
 
   /*
-   * isStopButtonPresent()
+   * isGenerating()
    * Claude's UI has changed a few times. We use multiple independent
    * strategies so a future UI update is unlikely to break all of them.
    *
-   * Strategy 1: aria-label containing "stop" (most semantic, preferred)
+   * Strategy 0: a message element with data-is-streaming="true" (most reliable;
+   *             Claude marks the in-progress response this way while it streams)
+   * Strategy 1: aria-label containing "stop" (semantic stop button)
    * Strategy 2: data-testid containing "stop"
-   * Strategy 3: SVG <title> text "Stop" inside a button (Claude uses this)
+   * Strategy 3: SVG <title> text "Stop" inside a button
    * Strategy 4: Button with a square/stop icon via role heuristics
    */
-  function isStopButtonPresent() {
+  function isGenerating() {
+    // Strategy 0 – streaming flag on the response element
+    if (document.querySelector('[data-is-streaming="true"]')) return true;
+
     // Strategy 1 – aria-label
-    if (document.querySelector('button[aria-label*="Stop" i]')) return true;
     if (document.querySelector('button[aria-label*="stop" i]')) return true;
 
     // Strategy 2 – data-testid
@@ -135,11 +146,14 @@
   function handleMutation() {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
-      const isGenerating = isStopButtonPresent();
-      if (wasGenerating && !isGenerating) {
+      const generating = isGenerating();
+      if (generating !== wasGenerating) {
+        log(generating ? 'generation started' : 'generation finished');
+      }
+      if (wasGenerating && !generating) {
         onResponseDone();
       }
-      wasGenerating = isGenerating;
+      wasGenerating = generating;
     }, 120);
   }
 
@@ -148,6 +162,14 @@
     childList: true,
     subtree: true,
     attributes: true,
-    attributeFilter: ['aria-label', 'data-testid', 'disabled', 'aria-disabled']
+    attributeFilter: ['aria-label', 'data-testid', 'data-is-streaming', 'disabled', 'aria-disabled']
   });
+
+  // Unlock/resume the AudioContext on the first user interaction with the page
+  // so the chime can play even when the tab is later in the background.
+  ['pointerdown', 'keydown'].forEach((ev) => {
+    window.addEventListener(ev, () => { try { getAudioCtx(); } catch (e) {} }, { once: true, capture: true });
+  });
+
+  log('content script loaded; debug logging on');
 })();

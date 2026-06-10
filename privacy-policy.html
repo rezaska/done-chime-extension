@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Done Chime for Claude – Privacy Policy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 640px;
+      margin: 60px auto;
+      padding: 0 24px 80px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #222;
+    }
+    h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+    h2 { font-size: 16px; font-weight: 600; margin: 32px 0 8px; }
+    p, li { color: #444; }
+    ul { padding-left: 20px; }
+    .meta { font-size: 13px; color: #999; margin-bottom: 40px; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: #f4f4f5;
+      border: 1px solid #e4e4e7;
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+    .badge {
+      display: inline-block;
+      background: #f0faf4; color: #1a7a45;
+      border: 1px solid #b3e6c8;
+      border-radius: 6px; padding: 4px 12px;
+      font-size: 13px; font-weight: 600;
+      margin-bottom: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Done Chime for Claude – Privacy Policy</h1>
+  <p class="meta">
+    Last updated: June 2026 ·
+    Canonical version:
+    <a href="https://rezasoleimani.ca/done-chime/privacy/">rezasoleimani.ca/done-chime/privacy</a>
+  </p>
+
+  <div class="badge">✓ This extension collects zero user data</div>
+
+  <h2>Overview</h2>
+  <p>
+    Done Chime for Claude is a Chrome extension that plays a chime and shows a browser notification
+    when Claude (claude.ai) finishes generating a response. It is a simple productivity
+    utility with no accounts, no servers, and no data collection of any kind. Everything it
+    does runs locally in your browser.
+  </p>
+
+  <h2>Data we do NOT collect</h2>
+  <ul>
+    <li>We do not collect any personal information.</li>
+    <li>We do not read, store, or transmit the content of your Claude conversations.</li>
+    <li>We do not track browsing activity or history.</li>
+    <li>We do not use cookies or any form of analytics.</li>
+    <li>We do not share any data with third parties, because there is no data to share.</li>
+  </ul>
+
+  <h2>What the extension does</h2>
+  <p>
+    Done Chime for Claude runs entirely on your device. It watches for a specific UI change on
+    claude.ai (the Stop button appearing and disappearing), which indicates that Claude has
+    finished generating a response. When detected, it plays a locally synthesized audio chime
+    and optionally shows a browser notification. No content from the page is read or recorded.
+  </p>
+
+  <h2>Permissions used</h2>
+  <ul>
+    <li>
+      <strong>notifications</strong> – to show a browser notification when Claude finishes.
+      This is optional and can be disabled in the extension popup.
+    </li>
+    <li>
+      <strong>storage</strong> – to save your preferences (volume, sound type, on/off state)
+      on your device using local extension storage (<code>chrome.storage.local</code>).
+      Preferences are not synced to any cloud account and nothing is sent externally.
+    </li>
+    <li>
+      <strong>Host permission for claude.ai</strong> – required to inject the content script
+      that watches for Claude's Stop button. The extension only activates on claude.ai pages.
+    </li>
+  </ul>
+  <p>
+    The extension uses <strong>no remote code</strong>. All of its logic is bundled in the
+    extension and runs entirely within your browser, so its behavior cannot change after
+    install without an update you explicitly approve.
+  </p>
+
+  <h2>Data sovereignty &amp; residency</h2>
+  <p>
+    The extension uses no servers, cloud services, databases, or third-party processors.
+    No data is transmitted to, stored on, or processed by any server in any jurisdiction.
+  </p>
+  <p>
+    Because nothing ever leaves your device, your data does not reside in, and is never
+    subject to the laws of, any country. There is no cross-border data transfer to consider,
+    and no government request or data-access law could compel disclosure of your information.
+    There is nothing to hold or disclose. The extension is developed in Canada by Reza Soleimani.
+  </p>
+
+  <h2>Your control over your data</h2>
+  <ul>
+    <li>Preferences live solely in your browser's local extension storage on your own device.</li>
+    <li>You can change or reset them at any time from the extension's popup.</li>
+    <li>Uninstalling the extension removes its local storage and all preferences along with it.</li>
+  </ul>
+
+  <h2>Children's privacy</h2>
+  <p>
+    This extension does not collect data from anyone, including children under the age of 13.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If the extension ever changes in a way that affects privacy, this policy will be updated
+    and the extension version number will be incremented. You will be able to review any
+    changes before updating.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions? Reach out at
+    <a href="mailto:rezawritescodes@gmail.com">rezawritescodes@gmail.com</a>.
+  </p>
+
+</body>
+</html>

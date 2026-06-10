@@ -88,7 +88,7 @@
     .notif-hint { font-size: 11px; color: #aaa; margin-top: 2px; }
 
     /* ── Footer ── */
-    .footer { padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+    .footer { padding: 14px 16px; display: flex; flex-direction: column; position: relative; }
 
     .preview-btn {
       width: 100%; padding: 8px 12px;
@@ -100,9 +100,11 @@
     .preview-btn:hover { background: #efefef; }
     .preview-btn:active { background: #e5e5e5; transform: scale(0.98); }
 
+    /* Overlaid so it doesn't add height — keeps the button's top/bottom spacing even */
     .status-row {
+      position: absolute; left: 16px; right: 16px; bottom: 1px;
       display: flex; align-items: center; justify-content: center; gap: 6px;
-      min-height: 16px;
+      pointer-events: none;
     }
     .status { font-size: 11px; color: #aaa; }
 
@@ -123,7 +125,7 @@
     <div class="header-left">
       <span class="header-icon">🔔</span>
       <span class="header-title">Done Chime</span>
-      <span class="header-version">v1.0.3</span>
+      <span class="header-version">v1.0.4</span>
     </div>
     <div class="toggle-wrap">
       <span class="toggle-label" id="enabledLabel">On</span>

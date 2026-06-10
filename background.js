@@ -8,11 +8,16 @@ chrome.runtime.onMessage.addListener((message) => {
   if (message.type === 'notify') {
     chrome.notifications.create('claude-bell-done', {
       type: 'basic',
-      iconUrl: 'icons/icon48.png',
+      iconUrl: 'icons/icon128.png',
       title: 'Claude is done',
       message: 'Your response is ready — click to switch back.',
       silent: true,
-      priority: 1
+      priority: 2
+    }, () => {
+      if (chrome.runtime.lastError) {
+        // e.g. OS-level notifications disabled for Chrome
+        console.warn('[Done Chime] notification failed:', chrome.runtime.lastError.message);
+      }
     });
   }
 });

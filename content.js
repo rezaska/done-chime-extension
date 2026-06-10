@@ -138,7 +138,10 @@
     if (!settings.enabled) return;
     playSound();
     if (settings.notifications) {
-      chrome.runtime.sendMessage({ type: 'notify' }).catch(() => {});
+      log('sending notify message to background');
+      chrome.runtime.sendMessage({ type: 'notify' }).catch((e) => log('sendMessage failed', e));
+    } else {
+      log('notifications disabled in settings; not sending');
     }
   }
 

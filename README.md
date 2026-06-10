@@ -4,12 +4,12 @@ A lightweight Chrome extension that plays a chime and shows a desktop notificati
 
 ## Features
 
-- 🔔 **Audible chime** when Claude finishes generating a response
-- 💬 **Desktop notification** that focuses the Claude tab when clicked
-- 🎵 **Four built-in sounds** — Chime, Bell, Ding, and Soft — all generated with the Web Audio API (no audio files, no network calls)
-- 🔊 **Adjustable volume** with a live preview button
-- ⚙️ **Toggle sound and notifications** independently
-- 🔒 **Fully private** — no data is collected, stored externally, or transmitted
+- **Audible chime** when Claude finishes generating a response
+- **Desktop notification** that focuses the Claude tab when clicked
+- **Four built-in sounds** — Chime, Bell, Ding, and Soft — all generated with the Web Audio API (no audio files, no network calls)
+- **Adjustable volume** with a live preview button
+- **Toggle sound and notifications** independently
+- **Fully private** — no data is collected, stored externally, or transmitted
 
 ## How it works
 

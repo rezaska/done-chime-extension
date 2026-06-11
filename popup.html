@@ -50,6 +50,11 @@
     input:checked + .slider { background: #111; }
     input:checked + .slider::before { transform: translateX(17px); }
 
+    /* When the extension is toggled off, fade and lock all controls */
+    .body, .footer { transition: opacity 0.2s; }
+    body.is-off .body,
+    body.is-off .footer { opacity: 0.45; pointer-events: none; }
+
     /* ── Body ── */
     .body { padding: 14px 16px 0; display: flex; flex-direction: column; gap: 13px; }
 

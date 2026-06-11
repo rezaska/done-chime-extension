@@ -23,6 +23,7 @@
 
   function updateLabel() {
     enabledLabel.textContent = enabledToggle.checked ? 'On' : 'Off';
+    document.body.classList.toggle('is-off', !enabledToggle.checked);
   }
 
   // Load saved settings

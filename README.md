@@ -1,6 +1,6 @@
 # Done Chime for Claude
 
-A lightweight Chrome extension that plays a chime and shows a desktop notification when [Claude](https://claude.ai) finishes a response — so you can multitask freely without watching the tab.
+A lightweight Chrome extension that plays a chime and shows a desktop notification when [Claude](https://claude.ai) finishes a response, so you can multitask freely without watching the tab.
 
 **[Install from the Chrome Web Store →](https://chromewebstore.google.com/detail/done-chime-for-claude/onhjfjdemcplbcgdjibgjnlfgcjcioec)**
 
@@ -8,16 +8,16 @@ A lightweight Chrome extension that plays a chime and shows a desktop notificati
 
 - **Audible chime** when Claude finishes generating a response
 - **Desktop notification** that focuses the Claude tab when clicked
-- **Four built-in sounds** — Chime, Bell, Ding, and Soft — all generated with the Web Audio API (no audio files, no network calls)
+- **Four built-in sounds** (Chime, Bell, Ding, and Soft), all generated with the Web Audio API (no audio files, no network calls)
 - **Adjustable volume** with a live preview button
 - **Toggle sound and notifications** independently
-- **Fully private** — no data is collected, stored externally, or transmitted
+- **Fully private**. No data is collected, stored externally, or transmitted
 
 ## How it works
 
 Claude streams its responses, showing a **Stop** button while generating. A content script watches the page for that button to disappear, which reliably signals the response has finished. To stay resilient against UI changes, it uses several independent detection strategies (`aria-label`, `data-testid`, SVG titles, and icon-shape heuristics).
 
-When a response completes, the extension plays your selected sound and — if enabled — fires a notification via the service worker. Clicking the notification brings the Claude tab back into focus.
+When a response completes, the extension plays your selected sound and, if enabled, fires a notification via the service worker. Clicking the notification brings the Claude tab back into focus.
 
 ## Installation
 
@@ -32,7 +32,7 @@ The easiest way is to install directly from the [Chrome Web Store](https://chrom
 2. Open `chrome://extensions` in Chrome (or any Chromium-based browser).
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the cloned folder.
-5. Open [claude.ai](https://claude.ai) — the extension activates automatically.
+5. Open [claude.ai](https://claude.ai) and the extension activates automatically.
 
 Click the extension icon to open the settings popup and customize sound, volume, and notifications.
 

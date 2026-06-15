@@ -13,9 +13,7 @@ A lightweight Chrome extension that plays a chime and shows a desktop notificati
 
 ## How it works
 
-Claude streams its responses, showing a **Stop** button while generating. A content script watches the page for that button to disappear, which reliably signals the response has finished. To stay resilient against UI changes, it uses several independent detection strategies (`aria-label`, `data-testid`, SVG titles, and icon-shape heuristics).
-
-When a response completes, the extension plays your selected sound and, if enabled, fires a notification via the service worker. Clicking the notification brings the Claude tab back into focus.
+The extension runs a small content script on claude.ai that detects when a response finishes streaming. At that point it plays your selected sound and, if enabled, shows a desktop notification. Clicking the notification brings the Claude tab back into focus.
 
 ## Installation
 

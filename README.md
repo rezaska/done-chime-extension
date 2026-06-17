@@ -2,6 +2,8 @@
 
 A lightweight Chrome extension that plays a chime and shows a desktop notification when [Claude](https://claude.ai) finishes a response, so you can multitask freely without watching the tab. It detects when a response finishes streaming, then plays your selected sound and, if enabled, shows a notification you can click to jump back to the Claude tab.
 
+![Done Chime for Claude popup](assets/screenshot.png)
+
 ## Features
 
 - **Audible chime** when Claude finishes generating a response

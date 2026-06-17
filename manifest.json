@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Done Chime for Claude",
   "short_name": "Done Chime",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Plays a chime and shows a notification when Claude finishes a response. Multitask freely without watching the tab.",
   "permissions": ["notifications", "storage"],
   "host_permissions": ["https://claude.ai/*"],
